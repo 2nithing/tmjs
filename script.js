@@ -131,7 +131,7 @@ function handleTestImage(event, preview) {
     reader.onload = function (e) {
       uploadedImage.src = e.target.result;
       uploadedImage.style.display = "block";
-      uploadedImage.className = "thumbnail";
+      uploadedImage.className = "thumbnail1";
       uploadedImage.onload = function () {
         let videoFrameAsTensor = tf.browser.fromPixels(uploadedImage).div(255);
         let tensor = tf.image.resizeBilinear(
