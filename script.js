@@ -52,8 +52,11 @@ function handleImageUpload(event, previewId, classNameInputId) {
   }
 }
 
+let trainingStatus = document.getElementById("trainingStatus");
+
 async function Training() {
   predict = false;
+
   const imageTensors = [];
   for (const img of imageElements) {
     const tensor = await imageToTensor(img);
@@ -97,7 +100,6 @@ async function Training() {
   inputsAsTensor.dispose();
   predict = true;
 }
-let trainingStatus = document.getElementById("trainingStatus");
 
 function logProgress(epoch, logs) {
   console.log("Data for epoch " + epoch, logs);
@@ -174,7 +176,10 @@ document
     handleImageUpload(event, "imagePreview2", "className2");
   });
 
-document.getElementById("train").addEventListener("click", Training);
+document.getElementById("train").addEventListener("click", () => {
+  trainingStatus.innerHTML = "<p>Preparing Training Data</p>";
+  Training();
+});
 
 document
   .getElementById("testImage")
