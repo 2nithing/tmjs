@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two-Column Image Upload with Class Names</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="column">
+        <input
+          type="text"
+          id="className1"
+          data-label="0"
+          placeholder="Enter Class Name"
+          class="class-name-input"
+        />
+        <input
+          type="file"
+          id="imageUpload1"
+          class="imageUploader"
+          multiple
+          accept="image/*"
+        />
+        <div id="imagePreview1" class="image-preview"></div>
+      </div>
+      <div class="column">
+        <input
+          type="text"
+          id="className2"
+          data-label="1"
+          placeholder="Enter Class Name"
+          class="class-name-input"
+        />
+        <input
+          type="file"
+          id="imageUpload2"
+          class="imageUploader"
+          multiple
+          accept="image/*"
+        />
+        <div id="imagePreview2" class="image-preview"></div>
+      </div>
+    </div>
+    <br />
+
+    <div class="container">
+      <div class="column">
+        <button id="train">Train</button>
+        <div id="trainingStatus"></div>
+      </div>
+    </div>
+    <br />
+    <div id="imageContainer">
+      <div class="column">
+        <input type="file" id="testImage" accept="image/*" />
+
+        <img
+          id="showTestImage"
+          src="#"
+          alt="Your Image"
+          style="display: none; max-width: 100%; height: auto"
+        />
+
+        <div id="prediction"></div>
+      </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.11.0/dist/tf.min.js"
+      type="text/javascript"
+    ></script>
+  </body>
+</html>
