@@ -9,7 +9,7 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  max-width: 1000px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -41,6 +41,8 @@ input[type="file"] {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
+  max-height: 50vh;
+  overflow-y: auto;
 }
 
 .thumbnail {
@@ -50,4 +52,17 @@ input[type="file"] {
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
+}
+
+.thumbnail1 {
+  width: 50vh;
+  height: 50vh;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+#prediction {
+  font-weight: bold;
 }
